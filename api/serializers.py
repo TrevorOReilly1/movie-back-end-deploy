@@ -9,7 +9,7 @@ class MovieSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Movie
-        fields = ('pk','name', 'description', 'year', 'rating', 'movie_image')
+        fields = ('pk','name', 'description', 'year', 'rating', 'movie_image', 'director')
 
 class RegisterSerializer(serializers.ModelSerializer):
     email = serializers.EmailField(
