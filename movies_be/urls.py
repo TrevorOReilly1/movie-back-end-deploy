@@ -16,6 +16,10 @@ urlpatterns = [
     path('api/movies/', views.movie_list),
     path('api/movies/<int:pk>', views.getMovie),
     path('register/', RegisterView.as_view(), name='auth_register'),
+    re_path(r'^media/(?P<path>.*)$', serve, {'document_root':
+settings.MEDIA_ROOT}), #serve media files when deployed
+    re_path(r'^static/(?P<path>.*)$', serve, {'document_root':
+settings.STATIC_ROOT}), #serve static files when deployed
 ]
 if settings.DEBUG == True:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
