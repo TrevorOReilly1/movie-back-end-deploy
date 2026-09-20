@@ -9,6 +9,7 @@ class Movie(models.Model):
         default=timezone.now)
     updated_date = models.DateTimeField(auto_now_add=True)
     movie_image = models.ImageField(upload_to='movie_pictures/', blank=True, null=True)
+    director = models.TextField(max_length=100, blank=True, null=True)
 
     def created(self):
         self.created_date = timezone.now()
